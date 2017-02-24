@@ -176,7 +176,7 @@ class Search
     public function setQuery($query)
     {
         if ($query instanceof AbstractFilter) {
-            trigger_error('Deprecated: Elastica\Search::setQuery() passing AbstractFilter is deprecated. Create query and use setPostFilter with AbstractQuery instead.', E_USER_DEPRECATED);
+            //trigger_error('Deprecated: Elastica\Search::setQuery() passing AbstractFilter is deprecated. Create query and use setPostFilter with AbstractQuery instead.', E_USER_DEPRECATED);
         }
 
         $this->_query = Query::create($query);

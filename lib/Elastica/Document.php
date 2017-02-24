@@ -160,7 +160,7 @@ class Document extends AbstractUpdateAction
      */
     public function add($key, $value)
     {
-        trigger_error('Deprecated: Elastica\Document::add is deprecated and will be removed in further Elastica releases. Use Elastica\Document::set instead.', E_USER_DEPRECATED);
+        //trigger_error('Deprecated: Elastica\Document::add is deprecated and will be removed in further Elastica releases. Use Elastica\Document::set instead.', E_USER_DEPRECATED);
 
         return $this->set($key, $value);
     }

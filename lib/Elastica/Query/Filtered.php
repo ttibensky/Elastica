@@ -4,7 +4,7 @@ namespace Elastica\Query;
 use Elastica\Exception\InvalidException;
 use Elastica\Filter\AbstractFilter;
 
-trigger_error('Use BoolQuery instead. Filtered query is deprecated since ES 2.0.0-beta1 and this class will be removed in further Elastica releases.', E_USER_DEPRECATED);
+//trigger_error('Use BoolQuery instead. Filtered query is deprecated since ES 2.0.0-beta1 and this class will be removed in further Elastica releases.', E_USER_DEPRECATED);
 
 /**
  * Filtered query. Needs a query and a filter.
@@ -29,7 +29,7 @@ class Filtered extends AbstractQuery
 
         if (null !== $filter) {
             if ($filter instanceof AbstractFilter) {
-                trigger_error('Deprecated: Elastica\Query\Filtered passing AbstractFilter is deprecated. Pass AbstractQuery instead.', E_USER_DEPRECATED);
+                //trigger_error('Deprecated: Elastica\Query\Filtered passing AbstractFilter is deprecated. Pass AbstractQuery instead.', E_USER_DEPRECATED);
             } elseif (!($filter instanceof AbstractQuery)) {
                 throw new InvalidException('Filter must be instance of AbstractQuery');
             }
@@ -61,7 +61,7 @@ class Filtered extends AbstractQuery
     {
         if (null !== $filter) {
             if ($filter instanceof AbstractFilter) {
-                trigger_error('Deprecated: Elastica\Query\Filtered::setFilter passing AbstractFilter is deprecated. Pass AbstractQuery instead.', E_USER_DEPRECATED);
+                //trigger_error('Deprecated: Elastica\Query\Filtered::setFilter passing AbstractFilter is deprecated. Pass AbstractQuery instead.', E_USER_DEPRECATED);
             } elseif (!($filter instanceof AbstractQuery)) {
                 throw new InvalidException('Filter must be instance of AbstractQuery');
             }

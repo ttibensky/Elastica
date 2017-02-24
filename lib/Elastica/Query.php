@@ -65,7 +65,7 @@ class Query extends Param
             case $query instanceof AbstractQuery:
                 return new self($query);
             case $query instanceof AbstractFilter:
-                trigger_error('Deprecated: Elastica\Query::create() passing filter is deprecated. Create query and use setPostFilter with AbstractQuery instead.', E_USER_DEPRECATED);
+                //trigger_error('Deprecated: Elastica\Query::create() passing filter is deprecated. Create query and use setPostFilter with AbstractQuery instead.', E_USER_DEPRECATED);
                 $newQuery = new self();
                 $newQuery->setPostFilter($query);
 
@@ -137,12 +137,12 @@ class Query extends Param
     public function setFilter($filter)
     {
         if ($filter instanceof AbstractFilter) {
-            trigger_error('Deprecated: Elastica\Query::setFilter() passing filter as AbstractFilter is deprecated. Pass instance of AbstractQuery instead.', E_USER_DEPRECATED);
+            //trigger_error('Deprecated: Elastica\Query::setFilter() passing filter as AbstractFilter is deprecated. Pass instance of AbstractQuery instead.', E_USER_DEPRECATED);
         } elseif (!($filter instanceof AbstractQuery)) {
             throw new InvalidException('Filter must be instance of AbstractQuery');
         }
 
-        trigger_error('Deprecated: Elastica\Query::setFilter() is deprecated and will be removed in further Elastica releases. Use Elastica\Query::setPostFilter() instead.', E_USER_DEPRECATED);
+        //trigger_error('Deprecated: Elastica\Query::setFilter() is deprecated and will be removed in further Elastica releases. Use Elastica\Query::setPostFilter() instead.', E_USER_DEPRECATED);
 
         return $this->setPostFilter($filter);
     }
@@ -239,7 +239,7 @@ class Query extends Param
      */
     public function setLimit($limit = 10)
     {
-        trigger_error('Deprecated: Elastica\Query::setLimit() is deprecated. Use setSize method instead. This method will be removed in further Elastica releases.', E_USER_DEPRECATED);
+        //trigger_error('Deprecated: Elastica\Query::setLimit() is deprecated. Use setSize method instead. This method will be removed in further Elastica releases.', E_USER_DEPRECATED);
 
         return $this->setSize($limit);
     }
@@ -459,9 +459,9 @@ class Query extends Param
     public function setPostFilter($filter)
     {
         if (is_array($filter)) {
-            trigger_error('Deprecated: Elastica\Query::setPostFilter() passing filter as array is deprecated. Pass instance of AbstractQuery instead.', E_USER_DEPRECATED);
+            //trigger_error('Deprecated: Elastica\Query::setPostFilter() passing filter as array is deprecated. Pass instance of AbstractQuery instead.', E_USER_DEPRECATED);
         } elseif ($filter instanceof AbstractFilter) {
-            trigger_error('Deprecated: Elastica\Query::setPostFilter() passing filter as AbstractFilter is deprecated. Pass instance of AbstractQuery instead.', E_USER_DEPRECATED);
+            //trigger_error('Deprecated: Elastica\Query::setPostFilter() passing filter as AbstractFilter is deprecated. Pass instance of AbstractQuery instead.', E_USER_DEPRECATED);
         } elseif (!($filter instanceof AbstractQuery)) {
             throw new InvalidException('Filter must be instance of AbstractQuery');
         }

@@ -22,7 +22,7 @@ class ConstantScore extends AbstractQuery
     {
         if (!is_null($filter)) {
             if ($filter instanceof AbstractFilter) {
-                trigger_error('Deprecated: Elastica\Query\ConstantScore passing AbstractFilter is deprecated. Pass AbstractQuery instead.', E_USER_DEPRECATED);
+                //trigger_error('Deprecated: Elastica\Query\ConstantScore passing AbstractFilter is deprecated. Pass AbstractQuery instead.', E_USER_DEPRECATED);
             } elseif (!is_array($filter) && !($filter instanceof AbstractQuery)) {
                 throw new InvalidException('Filter must be instance of AbstractQuery');
             }
@@ -41,7 +41,7 @@ class ConstantScore extends AbstractQuery
     public function setFilter($filter)
     {
         if ($filter instanceof AbstractFilter) {
-            trigger_error('Deprecated: Elastica\Query\ConstantScore::setFilter passing AbstractFilter is deprecated. Pass AbstractQuery instead.', E_USER_DEPRECATED);
+            //trigger_error('Deprecated: Elastica\Query\ConstantScore::setFilter passing AbstractFilter is deprecated. Pass AbstractQuery instead.', E_USER_DEPRECATED);
         } elseif (!is_array($filter) && !($filter instanceof AbstractQuery)) {
             throw new InvalidException('Filter must be instance of AbstractQuery or array');
         }

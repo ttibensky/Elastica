@@ -25,7 +25,7 @@ class SignificantTerms extends AbstractTermsAggregation
     public function setBackgroundFilter($filter)
     {
         if ($filter instanceof AbstractFilter) {
-            trigger_error('Deprecated: Elastica\Aggregation\SignificantTerms::setBackgroundFilter passing filter as AbstractFilter is deprecated. Pass instance of AbstractQuery instead.', E_USER_DEPRECATED);
+            //trigger_error('Deprecated: Elastica\Aggregation\SignificantTerms::setBackgroundFilter passing filter as AbstractFilter is deprecated. Pass instance of AbstractQuery instead.', E_USER_DEPRECATED);
         } elseif (!($filter instanceof AbstractQuery)) {
             throw new InvalidException('Filter must be instance of AbstractQuery');
         }
